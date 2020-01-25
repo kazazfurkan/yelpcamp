@@ -18,7 +18,14 @@ const   commentRoutes   = require('./routes/comments'),
     
 //seedDB(); // seed the database
 
-mongoose.connect('mongodb://localhost/yelp_camp_v11_deployed',{useNewUrlParser: true, useUnifiedTopology: true});
+/* Local MongoDB : mongodb://localhost/yelp_camp_v11_deployed*/
+/* WLabs Atlas MongoDB : mongodb+srv://furkan:<password>@yelpcamp-9jiud.mongodb.net/test?retryWrites=true&w=majority */
+mongoose.connect('mongodb+srv://furkan:serra@yelpcamp-9jiud.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true}).then( () => {
+   console.log('Connected to DB!'); 
+}).catch(err => {
+    console.log(err);
+});
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
