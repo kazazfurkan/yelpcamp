@@ -1,0 +1,20 @@
+.test{
+    object-fit: cover;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.avatar{
+    width:64px;
+    height:64px;
+    border:2px solid #e5e7e8;
+}
+
+.camp-show{
+    margin: 10px;
+}
+
+.delete-form{
+    display: inline;
+    margin-left: 5px;
+}

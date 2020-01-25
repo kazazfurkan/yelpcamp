@@ -1,0 +1,90 @@
+body{
+    background-color: #000;
+}
+
+#landing-header{
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+#landing-header h1{
+    color: #FFF;
+    font-size: 4em;
+    text-shadow: 2px 2px 6px #000;
+}
+
+.slideshow{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top : 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top : 0;
+    left: 0;
+    background-size: cover; /* Background image cover the entire page */
+    background-position: 50% 50%; /*Centers the background image*/
+    background-repeat: no-repeat; /* Prevent background image to repeat ver/hor */
+    opacity: 0;
+    z-index: 0;
+    /* --name of the animation -- will last after 'value' seconds-- linear(same speed) -- loop infinite  */
+    animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) {
+    background-image: url(https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60);
+}
+.slideshow li:nth-child(2) {
+    background-image: url(https://images.unsplash.com/photo-1486915309851-b0cc1f8a0084?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60);
+    animation-delay: 10s;
+}
+.slideshow li:nth-child(3) {
+    background-image: url(https://images.unsplash.com/photo-1500220959218-81a28e9292d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80);
+    animation-delay: 20s;
+    
+}
+.slideshow li:nth-child(4) {
+    background-image: url(https://images.unsplash.com/photo-1545572695-789c1407474c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80);
+    animation-delay: 30s;
+}
+.slideshow li:nth-child(5) {
+    background-image: url(https://images.unsplash.com/photo-1526491109672-74740652b963?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    animation-delay: 40s;
+}
+
+
+@keyframes imageAnimation{
+    0%{
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    
+    10%{
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    
+    20%{
+        opacity: 1;
+    }
+    
+    30%{
+        opacity: 0;
+    }
+}
+
+
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}
