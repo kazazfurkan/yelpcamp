@@ -20,7 +20,7 @@ const   commentRoutes   = require('./routes/comments'),
 
 /* Local MongoDB : mongodb://localhost/yelp_camp_v11_deployed*/
 /* WLabs Atlas MongoDB : mongodb+srv://furkan:<password>@yelpcamp-9jiud.mongodb.net/test?retryWrites=true&w=majority */
-mongoose.connect('mongodb+srv://furkan:serra@yelpcamp-9jiud.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true}).then( () => {
+mongoose.connect(process.env.DATABASEURL,{useNewUrlParser: true, useUnifiedTopology: true}).then( () => {
    console.log('Connected to DB!'); 
 }).catch(err => {
     console.log(err);
